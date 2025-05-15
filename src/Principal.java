@@ -29,11 +29,11 @@ public class Principal {
         while (true) {
             System.out.println("\n     ¿Qué moneda quieres convertir?:\n");
             for (Moneda m : Moneda.listaMonedas) {
-                System.out.printf("%-18s %-25s\n", m.pais, m.nombre + " (" + m.codigo + ")");
+                System.out.printf("%-18s %-25s\n", m.pais, m.nombre);
             }
-
+            System.out.println();
             while (true) {
-                System.out.print("\nIngresa el número de tu selección: ");
+                System.out.print("Ingresa el número de tu selección: ");
                 if (sc.hasNextInt()) {
                     seleccionMonedaBase = sc.nextInt();
 
@@ -42,10 +42,10 @@ public class Principal {
                         System.out.println("\nMuy bien, seleccionaste" + Moneda.listaMonedas.get(seleccionMonedaBase - 1).nombre + ",");
                         break;
                     } else {
-                        System.out.println("Por favor selecciona una opción válida (del 1 al 15)");
+                        System.out.println("\nPor favor selecciona una opción válida (del 1 al 15)");
                     }
                 } else {
-                    System.out.println("Por favor selecciona una opción válida, sólo se admiten números");
+                    System.out.println("\nPor favor selecciona una opción válida, sólo se admiten números");
                     sc.next();
                 }
             }
@@ -62,10 +62,10 @@ public class Principal {
                                 " a" + Moneda.listaMonedas.get(seleccionMonedaObjetivo - 1).nombre + ".");
                         break;
                     } else {
-                        System.out.println("Por favor selecciona una opción válida (del 1 al 15)");
+                        System.out.println("\nPor favor selecciona una opción válida (del 1 al 15)");
                     }
                 } else {
-                    System.out.println("Por favor selecciona una opción válida, sólo se admiten números");
+                    System.out.println("\nPor favor selecciona una opción válida, sólo se admiten números");
                     sc.next();
                 }
             }
@@ -108,7 +108,7 @@ public class Principal {
                 }
             }
 
-            System.out.println("\nQuieres convertir otra moneda? 1: Sí. Cualquier otra tecla: Salir. ");
+            System.out.println("Quieres convertir otra moneda? 1: Sí. Cualquier otra tecla: Salir. ");
             String seguir = sc.next();
 
             if (!seguir.equals("1")) {
